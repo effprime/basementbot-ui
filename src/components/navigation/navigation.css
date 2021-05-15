@@ -1,0 +1,20 @@
+.navLogo:hover, .navLink:hover, .activeNavLink:hover {
+    color: gray;
+}
+
+.navLogo {
+    margin-left: 10px;
+}
+
+.activeNavLink {
+    color: white;
+    font-weight: bold;
+}
+
+.navLogo, .navLink, .activeNavLink {
+    color: white;
+}
+
+.navPanel {
+    background-color: #23272a;
+}

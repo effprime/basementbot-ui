@@ -1,0 +1,17 @@
+.guildDiv {
+    display: inline-block;
+    position: relative;
+    width: 500px;
+    margin: 2px;
+    padding: 10px;
+    border: solid 2px gray;
+    background-color: #23272a;
+}
+
+.guildData {
+    float: left;
+}
+
+.guildButtons {
+    float: right;
+}

@@ -1,25 +1,85 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from 'react-router-dom';
+import { Container, Row } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { StatusDisplay } from './components/status/status'
+import { PluginDisplay } from './components/plugins/plugin'
+import { GuildDisplay } from './components/guilds/guilds'
+import { PasswordForm } from './components/auth/auth'
+import { NavigationPanel } from './components/navigation/navigation'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.css';
+require('dotenv').config()
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loggedIn: false,
+      isHoriziontal: true
+    };
+    this.handleResize = this.handleResize.bind(this)
+  }
+
+  componentDidMount() {
+    window.addEventListener("resize", this.handleResize);
+    
+    const token = localStorage.getItem("token");
+    if (!token) {
+      return
+    }
+
+    this.setState({loggedIn: true})
+  }
+
+  handleResize(_) {
+    const isHoriziontal = this.isHoriziontal()
+    this.setState({isHoriziontal})
+  }
+
+  isHoriziontal() {
+    if (window.innerWidth < window.innerHeight) {
+      return false;
+    }
+    return true;
+  }
+
+  render() {
+    return (
+      <Container className="mainContainer" fluid>
+      {this.state.loggedIn ? 
+        <Router>
+          <NavigationPanel></NavigationPanel>
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={() => {
+                return (
+                  <Redirect to="/status"/>
+                )
+              }}
+            />
+            <Route path="/status">
+              <StatusDisplay setState={this.setState.bind(this)}></StatusDisplay>
+            </Route>
+            <Route path="/plugins">
+              <PluginDisplay setState={this.setState.bind(this)}></PluginDisplay>
+            </Route>
+            <Route path="/guilds">
+              <GuildDisplay setState={this.setState.bind(this)}></GuildDisplay>
+            </Route>
+          </Switch>
+        </Router> :
+      <PasswordForm setState={this.setState.bind(this)}></PasswordForm> }
+      </Container> 
+    )
+  }
 }
 
 export default App;

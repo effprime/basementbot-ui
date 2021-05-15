@@ -1,0 +1,22 @@
+.statusIcon {
+    margin: 5px;
+}
+
+.pluginDiv {
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    height: 50px;
+    margin: 2px;
+    padding: 10px;
+    border: solid 2px gray;
+    background-color: #23272a;
+}
+
+.pluginName {
+    float: left;
+}
+
+.loadedIcon {
+    float: right;
+}
