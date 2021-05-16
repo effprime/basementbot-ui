@@ -33,7 +33,7 @@ export class StatusDisplay extends Component {
             if (error.response?.status === 401) {
                 this.props.setState({ loggedIn: false })
             } else {
-                this.setState({ error_message: "Could not retrieve plugin data" })
+                this.setState({ error_message: "Could not retrieve status data" })
             }
         });
     }
@@ -43,10 +43,12 @@ export class StatusDisplay extends Component {
 
         let display = (
             <div>
-                <div>Startup time: {this.state.bot_data.startup_time} UTC</div>
-                <div>Latency: {this.state.bot_data.latency*1000} ms</div>
-                <div>Logged in as: {this.state.bot_data.user}</div>
-                <div>Owner: {this.state.bot_data.owner}</div>
+                <StatusInfo name="Startup Time" value={this.state.bot_data.startup_time + " UTC"}></StatusInfo>
+                <StatusInfo name="Latency" value={this.state.bot_data.latency*1000 + " ms"}></StatusInfo>
+                <StatusInfo name="Logged in as" value={this.state.bot_data.user}></StatusInfo>
+                <StatusInfo name="Owner" value={this.state.bot_data.owner}></StatusInfo>
+                <StatusInfo name="Guild Cache" value={this.state.bot_data.guilds?.length + " guilds"}></StatusInfo>
+                <StatusInfo name="User Cache" value={this.state.bot_data.users?.length + " members"}></StatusInfo>
             </div>
         )
 
@@ -56,4 +58,17 @@ export class StatusDisplay extends Component {
             </div>
         )
     }
+}
+
+function StatusInfo(props) {
+    return (
+        <div className="statusDiv">
+            <div className="infoKeyHeader">
+                {props.name}
+            </div>
+            <div className="infoValue">
+                {props.value}
+            </div>
+        </div>
+    )
 }

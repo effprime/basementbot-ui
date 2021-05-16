@@ -34,7 +34,6 @@ export class PluginDisplay extends Component {
             if (error.response?.status === 401) {
                 this.props.setState({ loggedIn: false })
             } else {
-                console.log(error)
                 alert("Could not load plugin")
             }
         });
@@ -54,7 +53,6 @@ export class PluginDisplay extends Component {
             if (error.response?.status === 401) {
                 this.props.setState({ loggedIn: false })
             } else {
-                console.log(error)
                 alert("Could not unload plugin")
             }
         });
@@ -83,7 +81,7 @@ export class PluginDisplay extends Component {
     render() {
         let plugins = [];
         for (const [plugin_name, status] of Object.entries(this.state.plugin_data)) {
-            plugins.push(<PluginInfo name={plugin_name} status={status} load={this.loadPlugin.bind(this)} unload={this.unloadPlugin.bind(this)}></PluginInfo>)
+            plugins.push(<PluginInfo key={plugin_name} name={plugin_name} status={status} load={this.loadPlugin.bind(this)} unload={this.unloadPlugin.bind(this)}></PluginInfo>)
         }
 
         return (
@@ -96,8 +94,8 @@ export class PluginDisplay extends Component {
 
 function PluginInfo(props) {
     const icon = props.status === "loaded" ?
-    <Icon.CircleFill color="green" onClick={() => {props.unload(props.name)}}></Icon.CircleFill> :
-    <Icon.CircleFill color="red" onClick={() => {props.load(props.name)}}></Icon.CircleFill>
+    <Icon.CircleFill className="statusIcon" color="green" onClick={() => {props.unload(props.name)}}></Icon.CircleFill> :
+    <Icon.CircleFill className="statusIcon" color="red" onClick={() => {props.load(props.name)}}></Icon.CircleFill>
 
     return (
         <div className="pluginDiv">

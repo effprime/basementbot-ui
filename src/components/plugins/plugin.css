@@ -7,7 +7,7 @@
     position: relative;
     width: 200px;
     height: 50px;
-    margin: 2px;
+    margin: 5px;
     padding: 10px;
     border: solid 2px gray;
     background-color: #23272a;
@@ -19,4 +19,8 @@
 
 .loadedIcon {
     float: right;
+}
+
+.statusIcon {
+    cursor: pointer;
 }

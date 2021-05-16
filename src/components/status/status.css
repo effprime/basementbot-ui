@@ -1,0 +1,14 @@
+.statusDiv {
+    display: inline-block;
+    position: relative;
+    width: 300px;
+    height: 100px;
+    margin: 5px;
+    padding: 10px;
+    border: solid 2px gray;
+    background-color: #23272a;
+}
+
+.infoKeyHeader {
+    font-size: 20px;
+}

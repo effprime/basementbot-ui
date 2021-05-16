@@ -1,8 +1,8 @@
 .guildDiv {
     display: inline-block;
     position: relative;
-    width: 500px;
-    margin: 2px;
+    width: 350px;
+    margin: 5px;
     padding: 10px;
     border: solid 2px gray;
     background-color: #23272a;
@@ -14,4 +14,28 @@
 
 .guildButtons {
     float: right;
+}
+
+.guildButton {
+    margin: 5px;
+    cursor: pointer;
+}
+
+.configModal {
+    max-width: 1600px;
+    max-height: 1000px;
+    width: 90%;
+    height: 100%;
+}
+
+.configTextArea, .configTextArea:focus {
+    height: 750px;
+    max-height: 75%;
+    background-color: black;
+    color: white;
+}
+
+.modalButton {
+    color: white;
+    background-color: #23272a;
 }

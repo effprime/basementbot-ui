@@ -11,3 +11,7 @@ body {
 .displayDiv {
     padding: 10px;
 }
+
+.modal-content {
+    background-color: #23272a;
+}
