@@ -1,8 +1,6 @@
 import { Component } from 'react';
 import { ErrorDisplay } from '../error/error';
 import axios from 'axios';
-import { Col } from 'reactstrap';
-import * as Icon from 'react-bootstrap-icons';
 import './status.css'
 
 export class StatusDisplay extends Component {
@@ -44,7 +42,7 @@ export class StatusDisplay extends Component {
         let display = (
             <div>
                 <StatusInfo name="Startup Time" value={this.state.bot_data.startup_time + " UTC"}></StatusInfo>
-                <StatusInfo name="Latency" value={this.state.bot_data.latency*1000 + " ms"}></StatusInfo>
+                <StatusInfo name="Latency" value={this.state.bot_data.latency * 1000 + " ms"}></StatusInfo>
                 <StatusInfo name="Logged in as" value={this.state.bot_data.user}></StatusInfo>
                 <StatusInfo name="Owner" value={this.state.bot_data.owner}></StatusInfo>
                 <StatusInfo name="Guild Cache" value={this.state.bot_data.guilds?.length + " guilds"}></StatusInfo>

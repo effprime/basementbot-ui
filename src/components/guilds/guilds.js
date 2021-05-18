@@ -2,8 +2,6 @@ import axios from 'axios';
 import { Component } from 'react';
 import * as Icon from 'react-bootstrap-icons';
 import { ErrorDisplay } from '../error/error';
-import { JsonEditor as Editor } from 'jsoneditor-react';
-import 'jsoneditor-react/es/editor.min.css';
 
 import './guilds.css';
 

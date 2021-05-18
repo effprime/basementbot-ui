@@ -11,6 +11,7 @@ export class PasswordForm extends Component {
     }
   
     login() {
+      console.log("hello")
       axios.post(`http://${process.env.REACT_APP_API_HOST}:${process.env.REACT_APP_API_PORT}/auth/login`, {
         "password": this.state.password_input
       }).then(response => {

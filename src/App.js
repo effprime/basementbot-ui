@@ -5,7 +5,7 @@ import {
   Route,
   Redirect
 } from 'react-router-dom';
-import { Container, Row } from 'reactstrap';
+import { Container } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { StatusDisplay } from './components/status/status'
 import { PluginDisplay } from './components/plugins/plugin'

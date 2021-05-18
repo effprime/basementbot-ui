@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+    basement_bot_ui:
+        image: effprime/basement-bot-ui:dev
+        environment:
+            - DEBUG=1
+        ports:
+            - 3000:3000
+        volumes:
+            - ./:/app
