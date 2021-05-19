@@ -6,7 +6,6 @@ services:
         container_name: ${BASEMENT_BOT_UI_CONTAINER_NAME:-basement_bot_ui}
         environment:
             - DEBUG=0
-        env_file: .env
         restart: always
         ports:
             - ${UI_PORT:-80}:80
