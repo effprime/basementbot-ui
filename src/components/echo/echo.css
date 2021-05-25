@@ -1,0 +1,44 @@
+.tool {
+    display: inline-block;
+    position: relative;
+    width: 90%;
+    height: 300px;
+    margin: 5px;
+    padding: 10px;
+    border: solid 2px gray;
+    background-color: #23272a;
+}
+
+.toolHeader {
+    font-size: 20px;
+    display: inline-block;
+}
+
+.echoTypeDropdownWrapper {
+    float: right;
+}
+
+.echoTypeDropdown, .idInput, .messageInput {
+    color: white;
+    background-color: #2c2f33;
+}
+
+.messageInput {
+    width: 100%;
+    height: 100%;
+}
+
+.messageInputWrapper {
+    height: 50%;
+}
+
+.messageInputWrapper, .idInputWrapper{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.sendButton {
+    float: right;
+    color: white;
+    background-color: #23272a;
+}

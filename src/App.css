@@ -5,10 +5,11 @@ body {
 
 .mainContainer {
     padding: 0;
+    margin: 0;
 }
 
 .displayDiv {
-    padding: 10px;
+    margin: 5px;
 }
 
 .modal-content {

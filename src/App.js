@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { StatusDisplay } from './components/status/status'
 import { PluginDisplay } from './components/plugins/plugin'
 import { GuildDisplay } from './components/guilds/guilds'
+import { EchoDisplay } from './components/echo/echo'
 import { PasswordForm } from './components/auth/auth'
 import { NavigationPanel } from './components/navigation/navigation'
 
@@ -67,6 +68,9 @@ class App extends Component {
             />
             <Route path="/status">
               <StatusDisplay setState={this.setState.bind(this)}></StatusDisplay>
+            </Route>
+            <Route path="/echo">
+              <EchoDisplay setState={this.setState.bind(this)}></EchoDisplay>
             </Route>
             <Route path="/plugins">
               <PluginDisplay setState={this.setState.bind(this)}></PluginDisplay>

@@ -26,6 +26,9 @@ export const NavigationPanel = (props) => {
                             <NavLink className="navLink" activeClassName="activeNavLink" tag={RRNavLink} to="/status">Status</NavLink>
                         </NavItem>
                         <NavItem>
+                            <NavLink className="navLink" activeClassName="activeNavLink" tag={RRNavLink} to="/echo">Echo</NavLink>
+                        </NavItem>
+                        <NavItem>
                             <NavLink className="navLink" activeClassName="activeNavLink" tag={RRNavLink} to="/plugins">Plugins</NavLink>
                         </NavItem>
                         <NavItem>

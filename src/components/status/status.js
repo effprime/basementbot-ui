@@ -47,6 +47,8 @@ export class StatusDisplay extends Component {
                 <StatusInfo name="Owner" value={this.state.bot_data.owner}></StatusInfo>
                 <StatusInfo name="Guild Cache" value={this.state.bot_data.guilds?.length + " guilds"}></StatusInfo>
                 <StatusInfo name="User Cache" value={this.state.bot_data.users?.length + " members"}></StatusInfo>
+                <StatusInfo name="Postgres" value={this.state.bot_data.db || "Disconnected"}></StatusInfo>
+                <StatusInfo name="RabbitMQ" value={this.state.bot_data.rabbit || "Disconnected"}></StatusInfo>
             </div>
         )
 
