@@ -80,8 +80,8 @@ export class PluginDisplay extends Component {
 
     render() {
         let plugins = [];
-        for (const [plugin_name, status] of Object.entries(this.state.plugin_data)) {
-            plugins.push(<PluginInfo key={plugin_name} name={plugin_name} status={status} load={this.loadPlugin.bind(this)} unload={this.unloadPlugin.bind(this)}></PluginInfo>)
+        for (const [plugin_name, data] of Object.entries(this.state.plugin_data)) {
+            plugins.push(<PluginInfo key={plugin_name} name={plugin_name} status={data.status} load={this.loadPlugin.bind(this)} unload={this.unloadPlugin.bind(this)}></PluginInfo>)
         }
 
         return (
