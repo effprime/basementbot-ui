@@ -15,7 +15,6 @@ import { PasswordForm } from './components/auth/auth'
 import { NavigationPanel } from './components/navigation/navigation'
 
 import './App.css';
-require('dotenv').config()
 
 class App extends Component {
   constructor(props) {
